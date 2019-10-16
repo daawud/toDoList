@@ -37,6 +37,12 @@
     <div class="col-md-1">
         <a class="btn btn btn-primary" href="#" role="button">Войти</a>
     </div>
-</div>    
+</div> 
+
+<?php
+for ($j = 1; $j <= $str_pag; $j++){
+	echo "<a href=index.php?page=".$j."> Страница ".$j." </a>";
+}
+?>
     
 <?php include 'footer.php' ?>
