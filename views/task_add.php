@@ -1,7 +1,7 @@
 
 <?php include 'header.php' ?>
 
-<form action="index.php" method="post" name="myform">
+<form action="index.php" method="post">
     <div class="col-md-10">
         <div class="form-group">
             <label for="example-text-input">Имя</label>

@@ -8,14 +8,17 @@ if (isset($_GET['page'])){
 	$page = $_GET['page'];
 }else $page = 1;
 
-$kol = 3;  //количество записей для вывода
-$art = ($page * $kol) - $kol; // определяем, с какой записи нам выводить
+if (isset($_POST['sort_value'])){
+	$_SESSION['sort_field'] = $_POST['sort_value'];
+}        
 
-$sql = "SELECT id, name, email, task, status FROM tasks LIMIT $art,$kol";
-$tasks = $pdo->query($sql);
+$_SESSION['sort_field'] = isset($_SESSION['sort_field'])?$_SESSION['sort_field']:'id';
 
-$sql = 'SELECT COUNT(*) FROM tasks';
-$row = $pdo->query($sql)->fetch(PDO::FETCH_NUM);
-$total = $row[0]; // всего записей 
+$rec = 3;  //количество записей для вывода
+$art = ($page * $rec) - $rec; // определяем, с какой записи нам выводить
 
-$str_pag = ceil($total / $kol);
+$sort_field = $_SESSION['sort_field'];
+$sql = "SELECT id, name, email, task, status FROM tasks ORDER BY $sort_field";
+$tasks = $pdo->query($sql)->fetchAll();
+
+$str_pag = ceil(count($tasks) / $rec);
