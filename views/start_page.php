@@ -1,12 +1,5 @@
 
-<!-- Последняя компиляция и сжатый CSS -->  
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- Дополнение к теме -->  
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-<!-- Последняя компиляция и сжатый JavaScript -->  
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<?php include 'header.php' ?>
 
 <div class="col-md-12">
     <div class="row col-md-10">
@@ -16,7 +9,7 @@
                     <tr>
                         <th class="col-md-1">#</th>
                         <th class="col-md-2">Имя пользователя</th>
-                        <th class="col-md-2">E-mail</th>
+                        <th class="col-md-2">Email</th>
                         <th class="col-md-5">Задача</th>
                         <th class="col-md-2">Статус</th>
                     </tr>
@@ -37,14 +30,13 @@
                 </tbody>
             </table>
         </div>
+    </div>    
+    <div class="col-md-1">
+        <a id="but1" class="btn btn-success" href= "index.php?action=task_add" role="button">Добавить</a>
     </div>
     <div class="col-md-1">
-        <button type="button" class="btn btn-success">Добавить</button>
-    </div>
-    <div class="col-md-1">
-        <button type="button" class="btn btn btn-primary">Войти</button>
+        <a class="btn btn btn-primary" href="#" role="button">Войти</a>
     </div>
 </div>    
     
-
-
+<?php include 'footer.php' ?>
