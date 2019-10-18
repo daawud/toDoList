@@ -1,5 +1,5 @@
 
-<?php include 'header.php' ?>
+<?php require SITE_ROOT . 'components/header.php'; ?>
 
 <form action="index.php" method="post">
     <div class="col-md-10">
@@ -19,5 +19,5 @@
     </div>
 </form>
 
-<?php include 'footer.php' ?>
+<?php require SITE_ROOT . 'components/footer.php' ?>
 

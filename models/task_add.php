@@ -7,9 +7,9 @@ if (empty($_POST)) {
 
 require_once 'DB.php';
 
-$name = htmlspecialchars($_POST['name']);
-$email = htmlspecialchars($_POST['email']);
-$task = htmlspecialchars($_POST['task']);
+$name = htmlspecialchars(trim($_POST['name']));
+$email = htmlspecialchars(trim($_POST['email']));
+$task = htmlspecialchars(trim($_POST['task']));
 $status = 'Создано';
 
 $prepared_sql = DB::getInstance()->prepare("INSERT INTO tasks (name, email, task, status) VALUES (:name, :email, :task, :status)");

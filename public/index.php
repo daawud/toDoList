@@ -8,12 +8,18 @@ if (isset($_GET['action'])) {
     $action = $_GET['action'];
 }
 
-if (isset($action)) {
-    include (CTL_DIR . '/' . $action . '.php');
+if (isset($_SESSION['admin_session'])) {
+    require CTL_DIR . '/' . 'admin_page.php';
+} elseif (isset($action)) {
+    require (CTL_DIR . '/' . $action . '.php');
 } elseif (isset($_POST['taskadd'])) {
     require (CTL_DIR . '/task_add.php');
+} elseif (isset($_POST['signin'])) {
+    require (CTL_DIR . '/auth.php');
+} elseif (isset($_POST['change'])) {
+    require (CTL_DIR . '/admin_page.php');
 } else {
-    include_once (CTL_DIR . '/start_page.php');
+    require (CTL_DIR . '/start_page.php');
 }
 
 

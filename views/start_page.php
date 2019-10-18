@@ -1,5 +1,5 @@
 
-<?php include 'header.php' ?>
+<?php require SITE_ROOT . 'components/header.php'; ?>
 
 <div class="col-md-12">
     <div class="row col-md-10">
@@ -16,6 +16,14 @@
                 print $namecol;
                 print $emailcol;
                 print $statuscol;
+                ?>
+            </select>
+            <select name="sort_direction" id="sortDirection">
+                <?php 
+                $asc = ($_SESSION['sort_direction'] == 'ASC')? "<option value=\"ASC\" selected>возр.</option>":"<option value=\"ASC\">возр.</option>";
+                $desc = ($_SESSION['sort_direction'] == 'DESC')? "<option value=\"DESC\" selected>убыв.</option>": "<option value=\"DESC\">убыв.</option>";
+                print $asc;
+                print $desc;             
                 ?>
             </select>
             <input type="submit" name="sort" value="Применить">
@@ -64,8 +72,8 @@
         <a id="but1" class="btn btn-success" href= "index.php?action=task_add" role="button">Добавить</a>
     </div>
     <div class="col-md-1">
-        <a class="btn btn btn-primary" href="#" role="button">Войти</a>
+        <a class="btn btn btn-primary" href="index.php?action=auth" role="button">Войти</a>
     </div>
 </div>  
     
-<?php include 'footer.php' ?>
+<?php require SITE_ROOT . 'components/footer.php' ?>
