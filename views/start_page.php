@@ -57,14 +57,15 @@
         </div>
 
         <ul class="pagination">
-            <?php $curpage = $page; ?>
-            <li><a href="<?= "index.php?page=" . (($curpage == 1) ? '1' :  --$curpage); ?>">&laquo;</a></li>
+            <?php $curpage = $_GET['page']; ?>
+            <li><a href="<?= "index.php?page=" . (($curpage == 1 || !isset($curpage)) ? '1' :  --$curpage); ?>">&laquo;</a></li>
             <?php
             for ($j = 1; $j <= $str_pag; $j++) {
                 echo "<li><a href=index.php?page=" . $j . "> Страница " . $j . " </a></li>";
             }
             ?>
-            <li><a href="<?= "index.php?page=" . ++$curpage; ?>">&raquo;</a></li>
+            <?php $curpage = isset($_GET['page'])? $_GET['page']:1; ?>
+            <li><a href="<?= "index.php?page=" . (($curpage == $_SESSION['str_pag']) ? $curpage : ++$curpage); ?>">&raquo;</a></li>
         </ul> 
 
     </div>    

@@ -1,6 +1,6 @@
 <?php
 
-if ($_GET) {
+if (isset($_POST['logout'])) {
     unset($_SESSION['admin_session']);
     die('Сеанс администратора был завершен. Для продолжения работы осуществите вход повторно.');
 } else {

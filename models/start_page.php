@@ -26,3 +26,4 @@ $sql = "SELECT id, name, email, task, status FROM tasks ORDER BY $sort_field $so
 $tasks = $pdo->query($sql)->fetchAll();
 
 $str_pag = ceil(count($tasks) / $rec);
+$_SESSION['str_pag'] = $str_pag;

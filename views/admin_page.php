@@ -36,10 +36,10 @@
     <div class="col-md-1">
         <button type="submit" name="change" class="btn btn-success">Применить</button>
     </div>
-    </form>
     <div class="col-md-1">
-        <a class="btn btn btn-primary" href="index.php?action=logout" role="button">Выйти</a>
+        <button type="submit" name="logout" class="btn btn btn-primary">Выйти</button>
     </div>
+    </form>
 </div> 
 
 
